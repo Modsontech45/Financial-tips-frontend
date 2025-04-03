@@ -7,11 +7,10 @@ const bodyContainer = document.querySelector(".body-container");
 document.addEventListener("DOMContentLoaded", function () {
   const menuIcon = document.querySelector(".menu-icon");
   const navLink = document.querySelector(".nav-link");
-  navLink.style.display= "none"
 
+  navLink.classList.toggle("open");
   menuIcon.addEventListener("click", function () {
     navLink.classList.toggle("open");
-      navLink.style.display= "block"
 });
 
 })
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 //   navLink.classList.toggle("open");
 // });
 
-async function randomJokes() {
+async function randomTips() {
   try {
     loader.style.visibility = "visible";
     bodyContainer.classList.add("loading");
@@ -56,5 +55,5 @@ function getipsbyid(id) {
 }
 
 Tbuttons.addEventListener("click", () => {
-  randomJokes();
+  randomTips() ;
 });
