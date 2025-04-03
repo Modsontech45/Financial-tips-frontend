@@ -5,7 +5,7 @@ async function randomJokes() {
     try {
         // Use your deployed server URL if it's live; otherwise, keep 'localhost' for local dev.
         const response = await fetch("https://modson-jokes.onrender.com/random/")
-      
+
             .catch(() => {
                 throw new Error("Network error: Server is unreachable");
             });
@@ -26,3 +26,7 @@ async function randomJokes() {
 
 // Add event listener to the button to fetch the joke when clicked
 Jbutton.addEventListener('click', randomJokes);
+document.querySelector('.menu-icon').addEventListener('click', function() {
+    const navLink = document.querySelector('.nav-link');
+    navLink.classList.toggle('open');  // Toggle the "open" class
+});

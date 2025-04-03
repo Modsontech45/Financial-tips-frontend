@@ -1,5 +1,4 @@
-
-.body-container{
+.body-container {
     font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -8,25 +7,29 @@
     margin: 0;
     background-color: #f4f4f4;
 }
-header img{
+
+header img {
     width: 50px;
 }
-header{
+
+header {
     padding: 5px 50px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
-header .nav-link ul{
+
+header .nav-link ul {
     display: flex;
     list-style: none;
     gap: 2rem;
 }
 
-
-header .nav-link ul li a{
+header .nav-link ul li a {
     text-decoration: none;
     color: #259e69;
 }
+
 .container {
     text-align: center;
     background: white;
@@ -37,7 +40,6 @@ header .nav-link ul li a{
     width: 100%;
 }
 
-
 .joke {
     height: 100px;
     display: flex;
@@ -47,9 +49,9 @@ header .nav-link ul li a{
     border-radius: 8px;
     padding: 10px;
     margin: 15px 0;
-    /* overflow: hidden; */
 }
-p{
+
+p {
     font-size: 23px;
     font-weight: 200;
     color: rgb(36, 30, 30);
@@ -68,4 +70,50 @@ button {
 
 button:hover {
     background-color: #131314;
+}
+
+/* Media Query for iPhone 8 */
+@media (max-width: 750px) {
+    header .nav-link ul {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Initially hidden off-screen to the right */
+        width: 60%;
+        height: 100%;
+        background-color: white;
+        flex-direction: column;
+        padding-top: 50px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    header .nav-link ul li {
+        margin: 15px 0;
+    }
+
+    header .nav-link ul li a {
+        color: #259e69;
+    }
+
+    /* Menu icon styling */
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        color: #259e69;
+    }
+
+    /* Slide the menu in when .open is added */
+    .nav-link.open ul {
+        transform: translateX(-100%); /* Slide in from the right */
+    }
+}
+
+/* Hide the menu icon on larger screens */
+@media (min-width: 751px) {
+    .menu-icon {
+        display: none;
+    }
 }
