@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 body {
-margin-top: 50px;
+
     background: black;
     background-size: cover;
     position: relative;
@@ -100,6 +100,7 @@ header .nav-link ul li a {
 }
 
 .container {
+    margin-top: 70px;
     text-align: center;
     background: transparent;
     padding: 20px;
@@ -111,6 +112,7 @@ header .nav-link ul li a {
 }
 
 .container h1 {
+
     color: #0c9258;
 
 }
