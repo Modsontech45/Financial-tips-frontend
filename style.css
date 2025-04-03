@@ -3,11 +3,18 @@ body {
     background: black;
     background-size: cover;
     position: relative;
-    overflow: auto;  /* Change to 'auto' to allow scrolling */
-    min-height: 100vh; /* Allow body to grow if content exceeds viewport */
+    overflow: auto;
+    /* Change to 'auto' to allow scrolling */
+    min-height: 100vh;
+    /* Allow body to grow if content exceeds viewport */
     margin-bottom: 600px;
 }
 
+.nav-link li.active a{
+    color: #5e967f;
+  
+
+}
 
 body::before {
     content: "";
@@ -22,10 +29,13 @@ body::before {
     z-index: -1;
 }
 
+
+
 @keyframes moveClouds {
     0% {
         background-position: 0% 0%;
     }
+
     100% {
         background-position: 100% 100%;
     }
@@ -46,7 +56,7 @@ header img {
 }
 
 header {
-background: transparent;
+    background: transparent;
     padding: 1px 50px;
     display: flex;
     justify-content: space-between;
@@ -63,16 +73,12 @@ header .nav-link ul {
     gap: 2rem;
 }
 
-.active {
-    color:rgb(73, 129, 73);
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    padding: 1px 1px;
-}
+
 
 header .nav-link ul li a {
     text-decoration: none;
-    color: #e9f0ed;
+    color: aliceblue;
+
 }
 
 .container {
@@ -85,7 +91,8 @@ header .nav-link ul li a {
     width: 100%;
     color: #f3f3f3;
 }
-.container h1{
+
+.container h1 {
     color: #0c9258;
 
 }
@@ -105,8 +112,8 @@ header .nav-link ul li a {
     border-top: none;
     border-radius: 8px;
     padding: 10px;
-  margin-bottom: 50px;
-  margin-top: 60px;
+    margin-bottom: 50px;
+    margin-top: 60px;
 }
 
 #mytips {
@@ -165,7 +172,7 @@ header .nav-link ul li {
 }
 
 header .nav-link ul li a {
-    color: #f6f8f7;
+
     font-size: 18px;
     font-weight: 600;
     text-decoration: none;
@@ -211,6 +218,7 @@ header .nav-link ul li a {
         gap: 1rem;
         position: fixed;
         top: 0;
+        left: 10%;
         right: -10%;
         width: 60%;
         height: 7%;
@@ -225,13 +233,21 @@ header .nav-link ul li a {
     }
 
     header .nav-link ul li a {
-        color: rgb(248, 245, 245);
+
         font-weight: 800;
-        border: 1px solid #259e69;
+
         padding: 2px 5px;
         border-radius: 4px;
     }
 
+    .nav-link li.active a{
+        color: #c2d6ce;
+        background: #3ca175;
+        
+    }
+    
+ 
+    
     .menu-icon {
         display: block;
         cursor: pointer;
@@ -239,10 +255,13 @@ header .nav-link ul li a {
         color: #e9f3ef;
         z-index: 99;
     }
-    .container h1{
-        color: #e2eee9;
-        margin-top: 160px;
+
+    .container h1 {
+        color: #259e69;
+        margin-top: 10px;
     }
+
+
 
     .nav-link.open ul {
         transform: translateX(-150%);
@@ -274,8 +293,13 @@ header .nav-link ul li a {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 .body-container.loading .container {
