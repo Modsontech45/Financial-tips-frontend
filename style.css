@@ -7,11 +7,12 @@ body {
     background: black;
     background-size: cover;
     position: relative;
-    overflow: auto;
+
     font-family: "IBM Plex Mono", monospace;
 
     min-height: 100vh;
-
+      padding-left: 30px;
+      padding-right: 30px;
     margin-bottom: 600px;
 }
 
