@@ -354,3 +354,22 @@ header .nav-link ul li a {
 .body-container.loading .container {
     filter: blur(0.4px);
 }
+
+/* Basic styles for the footer */
+footer {
+    text-align: center;
+
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    background-color:transparent;
+    color: #fff;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+}
+
+footer p {
+    margin-bottom: 50px;
+    font-size: 16px;
+
+}
