@@ -217,11 +217,11 @@ header .nav-link ul li a {
     header .nav-link ul {
         display: flex;
         list-style: none;
-        gap: 1rem;
+        gap: 0.5rem;
         position: fixed;
         top: 0;
-        left: 10%;
-        right: -10%;
+        left: 4%;
+
         width: 60%;
         height: 7%;
         background-color: transparent;
