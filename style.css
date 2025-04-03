@@ -46,7 +46,7 @@ header img {
 }
 
 header {
-    background: url("cool.jpg");
+background: transparent;
     padding: 1px 50px;
     display: flex;
     justify-content: space-between;
@@ -64,7 +64,7 @@ header .nav-link ul {
 }
 
 .active {
-    background: #259e69;
+    color:rgb(73, 129, 73);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     padding: 1px 1px;
@@ -159,7 +159,7 @@ header .nav-link ul li {
 }
 
 header .nav-link ul li a {
-    color: #43efa1;
+    color: #f6f8f7;
     font-size: 18px;
     font-weight: 600;
     text-decoration: none;
