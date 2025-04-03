@@ -47,6 +47,7 @@ body::before {
 .body-container {
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -288,13 +289,37 @@ header .nav-link ul li a {
 
 }
 
+
+.under {
+    text-align: center;
+}
+
+
+.construction-text {
+    font-size: 30px;
+    font-weight: bold;
+    color: #ff5733;
+    animation: bounce 1.5s infinite ease-in-out;
+    margin-bottom: 50px;
+}
+
+/* Bouncing animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
 .loader {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-   
+
     display: flex;
     justify-content: center;
     align-items: center;
