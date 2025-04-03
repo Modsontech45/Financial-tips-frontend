@@ -1,3 +1,33 @@
+body {
+    background:black;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(270deg, rgba(213, 27, 27, 0.3), rgba(244, 237, 237, 0.1), rgba(14, 14, 232, 0.2));
+    background-size: 200% 200%;
+    animation: moveClouds 10s infinite alternate ease-in-out;
+    z-index: -1;
+}
+
+
+@keyframes moveClouds {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
 .body-container {
     font-family: Arial, sans-serif;
     display: flex;
@@ -5,7 +35,7 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f4f4f4;
+    background-color: transparent;
 }
 
 header img {
@@ -13,6 +43,7 @@ header img {
 }
 
 header {
+    background: url("/cool.jpg");
     padding: 5px 50px;
     display: flex;
     justify-content: space-between;
@@ -27,37 +58,45 @@ header .nav-link ul {
 
 header .nav-link ul li a {
     text-decoration: none;
-    color: #259e69;
+    color: #e9f0ed;
 }
 
 .container {
     text-align: center;
-    background: white;
+    background:transparent;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     max-width: 700px;
     width: 100%;
+    color: #f3f3f3;
+}
+.container p {
+    margin: 30px 0px;
+    line-height: 1.8; 
 }
 
-.joke {
+.tips {
     height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #939090;
+    border-bottom: none;
+    border-top: none;
     border-radius: 8px;
     padding: 10px;
     margin: 15px 0;
+    margin: 30px 0px;
 }
 
-p {
+#mytips {
     font-size: 23px;
     font-weight: 200;
-    color: rgb(36, 30, 30);
+    color: #288f62;
 }
 
-button {
+#gettips {
     background-color: #0c9258;
     color: white;
     border: none;
@@ -68,11 +107,28 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
+#gettips:hover {
     background-color: #131314;
 }
+#mytips button {
+    background-color: #e9f0ed;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
 
-/* Media Query for iPhone 8 */
+
+#mytips button:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 128, 0.9), 0 0 30px rgba(0, 255, 128, 0.5);
+    transform: scale(1.1); /* Increases size */
+    background-color: #d4f0e1;
+}
+
+
+
+
 @media (max-width: 750px) {
     header .nav-link ul {
         display: flex;
@@ -83,7 +139,7 @@ button:hover {
         right: -100%; /* Initially hidden off-screen to the right */
         width: 60%;
         height: 20%;
-        background-color:white;
+        background-color:transparent;
         flex-direction: column;
         padding-top: 30px;
         transition: transform 0.3s ease-in-out;
@@ -95,6 +151,7 @@ button:hover {
 
     header .nav-link ul li a {
         color: #259e69;
+        font-weight: 800;
     }
 
     /* Menu icon styling */
@@ -112,9 +169,44 @@ button:hover {
     }
 }
 
-/* Hide the menu icon on larger screens */
+
 @media (min-width: 751px) {
     .menu-icon {
         display: none;
     }
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    visibility: hidden;
+}
+
+.loader::after {
+    content: "";
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+}
+
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+.body-container.loading .container {
+    filter: blur(0.4px);
 }

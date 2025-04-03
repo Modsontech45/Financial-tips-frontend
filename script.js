@@ -1,9 +1,15 @@
-const Jbutton = document.getElementById("getjoke");
-const joke = document.getElementById("myjoke");
+const Tbuttons = document.getElementById("gettips");
+const tips = document.getElementById("mytips");
+const loader = document.getElementById("loader");
+const bodyContainer = document.querySelector('.body-container');
 
 async function randomJokes() {
     try {
-        // Use your deployed server URL if it's live; otherwise, keep 'localhost' for local dev.
+
+        loader.style.visibility = "visible";
+        bodyContainer.classList.add('loading');
+
+
         const response = await fetch("https://modson-jokes.onrender.com/random/")
 
             .catch(() => {
@@ -15,18 +21,31 @@ async function randomJokes() {
         }
 
         const data = await response.json();
-        console.log("Fetched Data:", data); // Log fetched data for debugging
-        joke.innerText = data.tipText || "No joke text found."; // Display the joke text
+        console.log("Fetched Data:", data);
+        if (data.tipText) {
+            tips.innerHTML = `"${data.tipText}" <br><br> <button onclick="getipsbyid(${data.id})">Learn More</button>`;
+        } else {
+            tips.innerHTML = "No tips text found.";
+        }
+
+
 
     } catch (error) {
         console.error("Error fetching data:", error.message);
-        joke.innerText = `⚠️ ${error.message}`; // Display error in the UI for the user
+        tips.innerText = `⚠️ ${error.message}`;
+    } finally {
+
+        loader.style.visibility = "hidden";
+        bodyContainer.classList.remove('loading');
     }
 }
+function getipsbyid(id){
+    console.log(id)
 
+}
+Tbuttons.addEventListener('click', randomJokes);
 
-Jbutton.addEventListener('click', randomJokes);
 document.querySelector('.menu-icon').addEventListener('click', function() {
     const navLink = document.querySelector('.nav-link');
-    navLink.classList.toggle('open');  // Toggle the "open" class
+    navLink.classList.toggle('open');
 });
