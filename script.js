@@ -31,7 +31,7 @@ async function randomJokes() {
         const data = await response.json();
         console.log("Fetched Data:", data);
         if (data.tipText) {
-            tips.innerHTML = `"${data.tipText}" <br><br> <button onclick="getipsbyid(${data.id})">Learn More</button>`;
+            tips.innerHTML = `"${data.tipText}"<button onclick="getipsbyid(${data.id})">Learn More</button>`;
         } else {
             tips.innerHTML = "No tips text found.";
         }
