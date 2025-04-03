@@ -12,7 +12,7 @@ body {
 
 .nav-link li.active a{
     color: #5e967f;
-  
+
 
 }
 
@@ -57,7 +57,9 @@ header img {
 
 header {
     background: transparent;
-    padding: 1px 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -243,11 +245,11 @@ header .nav-link ul li a {
     .nav-link li.active a{
         color: #c2d6ce;
         background: #3ca175;
-        
+
     }
-    
- 
-    
+
+
+
     .menu-icon {
         display: block;
         cursor: pointer;
