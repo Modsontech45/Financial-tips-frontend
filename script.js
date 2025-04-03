@@ -24,7 +24,7 @@ async function randomJokes() {
     }
 }
 
-// Add event listener to the button to fetch the joke when clicked
+
 Jbutton.addEventListener('click', randomJokes);
 document.querySelector('.menu-icon').addEventListener('click', function() {
     const navLink = document.querySelector('.nav-link');
