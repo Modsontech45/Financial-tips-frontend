@@ -11,8 +11,8 @@ body {
     font-family: "IBM Plex Mono", monospace;
 
     min-height: 100vh;
-      padding-left: 30px;
-      padding-right: 30px;
+      padding-left: 40px;
+      padding-right: 40px;
     margin-bottom: 600px;
 }
 
@@ -124,7 +124,7 @@ header .nav-link ul li a {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #939090;
+    border: 1px solid #242323;
     border-bottom: none;
     border-top: none;
     border-radius: 8px;
