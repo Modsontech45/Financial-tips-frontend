@@ -51,11 +51,10 @@ function getipsbyid(id){
     console.log(id)
 
 }
-// Check if the current page is 'index.html'
-if (window.location.pathname === "/index.html") {
+
     Tbuttons.addEventListener('click', () => {
         randomJokes();
     });
-}
+
 
 
