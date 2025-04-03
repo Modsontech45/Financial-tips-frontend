@@ -1,60 +1,60 @@
 const Tbuttons = document.getElementById("gettips");
 const tips = document.getElementById("mytips");
 const loader = document.getElementById("loader");
-const bodyContainer = document.querySelector('.body-container');
-const moveaway = document.querySelectorAll(".nav-link a");
+const bodyContainer = document.querySelector(".body-container");
 
-document.querySelector('.menu-icon').addEventListener('click', function() {
-    const navLink = document.querySelector('.nav-link');
-    navLink.classList.toggle('open');
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuIcon = document.querySelector(".menu-icon");
+  const navLink = document.querySelector(".nav-link");
+  navLink.style.display= "none"
+
+  menuIcon.addEventListener("click", function () {
+    navLink.classList.toggle("open");
+      navLink.style.display= "block"
 });
 
+})
 
+// document.querySelector(".menu-icon").addEventListener("click", function () {
+//   const navLink = document.querySelector(".nav-link");
+//   navLink.classList.toggle("open");
+// });
 
 async function randomJokes() {
-    try {
+  try {
+    loader.style.visibility = "visible";
+    bodyContainer.classList.add("loading");
 
-        loader.style.visibility = "visible";
-        bodyContainer.classList.add('loading');
-
-
-        const response = await fetch("https://modson-jokes.onrender.com/random/")
-
-            .catch(() => {
-                throw new Error("Network error: Server is unreachable");
-            });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        console.log("Fetched Data:", data);
-        if (data.tipText) {
-            tips.innerHTML = `"${data.tipText}"<button onclick="getipsbyid(${data.id})">Learn More</button>`;
-        } else {
-            tips.innerHTML = "No tips text found.";
-        }
-
-
-
-    } catch (error) {
-        console.error("Error fetching data:", error.message);
-        tips.innerText = `⚠️ ${error.message}`;
-    } finally {
-
-        loader.style.visibility = "hidden";
-        bodyContainer.classList.remove('loading');
-    }
-}
-function getipsbyid(id){
-    console.log(id)
-
-}
-
-    Tbuttons.addEventListener('click', () => {
-        randomJokes();
+    const response = await fetch(
+      "https://modson-jokes.onrender.com/random/"
+    ).catch(() => {
+      throw new Error("Network error: Server is unreachable");
     });
 
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
 
+    const data = await response.json();
+    console.log("Fetched Data:", data);
+    if (data.tipText) {
+      tips.innerHTML = `"${data.tipText}" <br><button onclick="getipsbyid(${data.id})">Learn More</button>`;
+    } else {
+      tips.innerHTML = "No tips text found.";
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error.message);
+    tips.innerText = `⚠️ ${error.message}`;
+  } finally {
+    loader.style.visibility = "hidden";
+    bodyContainer.classList.remove("loading");
+  }
+}
+function getipsbyid(id) {
+  console.log(id);
+}
 
+Tbuttons.addEventListener("click", () => {
+  randomJokes();
+});
