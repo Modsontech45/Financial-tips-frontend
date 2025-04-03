@@ -9,9 +9,7 @@ document.querySelector('.menu-icon').addEventListener('click', function() {
     navLink.classList.toggle('open');
 });
 
-document.addEventListener('click', function(event) {
-    console.log(event.target);
-});
+
 
 async function randomJokes() {
     try {
