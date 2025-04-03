@@ -15,11 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
-// document.querySelector(".menu-icon").addEventListener("click", function () {
-//   const navLink = document.querySelector(".nav-link");
-//   navLink.classList.toggle("open");
-// });
-
 async function randomTips() {
   try {
     loader.style.visibility = "visible";
