@@ -266,7 +266,7 @@ header .nav-link ul li a {
 
 
     .nav-link.open ul {
-        transform: translateX(-150%);
+        transform: translateX(-180%);
     }
 }
 
