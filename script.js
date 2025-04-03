@@ -2,6 +2,16 @@ const Tbuttons = document.getElementById("gettips");
 const tips = document.getElementById("mytips");
 const loader = document.getElementById("loader");
 const bodyContainer = document.querySelector('.body-container');
+const moveaway = document.querySelectorAll(".nav-link a");
+
+document.querySelector('.menu-icon').addEventListener('click', function() {
+    const navLink = document.querySelector('.nav-link');
+    navLink.classList.toggle('open');
+});
+
+document.addEventListener('click', function(event) {
+    console.log(event.target);
+});
 
 async function randomJokes() {
     try {
@@ -43,9 +53,11 @@ function getipsbyid(id){
     console.log(id)
 
 }
-Tbuttons.addEventListener('click', randomJokes);
+// Check if the current page is 'index.html'
+if (window.location.pathname === "/index.html") {
+    Tbuttons.addEventListener('click', () => {
+        randomJokes();
+    });
+}
 
-document.querySelector('.menu-icon').addEventListener('click', function() {
-    const navLink = document.querySelector('.nav-link');
-    navLink.classList.toggle('open');
-});
+
